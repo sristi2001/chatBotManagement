@@ -1,0 +1,61 @@
+<div class="profile-container">
+    <div class="profile-picture">
+      <img src="/assets/Vector (4).jpg" alt="profile Picture">
+    </div>
+      <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="firstName">Name</label>
+          <input id="firstName" type="text" formControlName="firstName" class="form-control">
+          <img src="/assets/Line 1.png" alt="line Picture">
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input id="lastName" type="text" formControlName="lastName" class="form-control">
+          <img src="/assets/Line 1.png" alt="line Picture">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email" class="form-control">
+          <img src="/assets/Line 1.png" alt="line Picture">
+        </div>
+       <!-- ------------------------------------------------------------------- -->
+        <!-- <mat-form-field class="form-group">
+          <mat-label>Email</mat-label>
+          <input id="email" type="email" formControlName="email" class="form-control"
+                 placeholder="Ex. pat@example.com">
+          <mat-hint>Errors appear instantly!</mat-hint>
+          <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="email.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field> -->
+        <!-- --------------------------------------------------------- -->
+
+
+        <!-- <div class="form-group">
+          <label for="phone">Phone No</label>
+          <input id="phone" type="tel" formControlName="phone" class="form-control">
+          <img src="/assets/Line 1.png" alt="line Picture">
+        </div> -->
+        <!-- ----------------------------------------------------------------------------- -->
+        <mat-form-field class="form-group">
+          <mat-label>Phone No</mat-label>
+          <!-- <span matPrefix>+19 &nbsp;</span> -->
+          <input id="phone" type="tel" formControlName="phone" class="form-control" matInput placeholder="555-555-1234">
+          <mat-icon fontIcon="mode_edit"></mat-icon>
+        </mat-form-field>
+        <!-- ------------------------------------------------------------------------------------ -->
+
+
+        <div class="form-group">
+          <label for="password">Change Password</label>
+          <input id="password" type="password" formControlName="password" class="form-control">
+          <img src="/assets/Line 1.png" alt="line Picture">
+        </div>
+        
+      </form>
+  </div>
+  

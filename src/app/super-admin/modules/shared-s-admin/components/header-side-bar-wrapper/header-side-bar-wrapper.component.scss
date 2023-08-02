@@ -1,0 +1,35 @@
+
+.container
+{
+    width: 98vw;
+    height: 98vh;
+    display: flex;
+    flex-direction: column;
+    .top
+    {
+        width: 98vw;
+        height: 18vh;
+    }
+    .bottom 
+    {
+        width: 98vw;
+        height: 79vh;
+        background-color: rgb(240, 248, 248);
+        display: flex;
+        flex-direction: row;
+        .menu-bar
+        {
+            width: 19%;
+            height: 100%;
+        }
+        .form
+        {
+            width: 80%;
+            height: 98%;
+            margin: 0.5rem;
+            justify-content: left;
+             background-color: rgb(240, 63, 63);
+        }
+
+    }
+}

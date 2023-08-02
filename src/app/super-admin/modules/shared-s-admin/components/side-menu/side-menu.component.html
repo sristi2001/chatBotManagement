@@ -1,0 +1,41 @@
+
+<ng-container>
+    <div class="menu">
+         <!-- <ul>
+           <li routerLink="/myProfile/page2">Dashboard</li>
+            <li routerLink="#">Department Management</li>
+            <li routerLink="#">Manage Bot </li>
+            <li routerLink="#">Help & Queries management</li>
+            <li routerLink="#">Query Type Management</li> 
+           </ul>  -->
+
+            <mat-list>
+                <mat-list-item routerLink="/dashboard/dashboardComp">dashboard</mat-list-item>
+                <mat-list-item routerLink="/departmentM/dpListTable">Department Management</mat-list-item>
+                <mat-list-item routerLink="#">Manage Bot</mat-list-item>
+                <mat-list-item routerLink="#">Help & Queries management</mat-list-item>
+                <mat-list-item routerLink="#">Query Type Management</mat-list-item>
+              </mat-list>
+
+    </div>
+</ng-container>
+
+
+
+<!-- <mat-drawer-container class="menu" [hasBackdrop]="hasBackdrop.value">
+    <mat-drawer #drawer [mode]="mode.value">
+        <mat-list>
+        <mat-list-item routerLink="/myProfile/page2">dashboard</mat-list-item>
+        <mat-list-item routerLink="#">Department Management</mat-list-item>
+        <mat-list-item routerLink="#">Manage Bot</mat-list-item>
+        <mat-list-item routerLink="#">Help & Queries management</mat-list-item>
+        <mat-list-item routerLink="#">Query Type Management</mat-list-item>
+      </mat-list>
+    </mat-drawer>
+    <mat-drawer-content>
+      
+      
+      <button mat-raised-button (click)="drawer.toggle()">menu</button>
+    </mat-drawer-content>
+  </mat-drawer-container>
+   -->

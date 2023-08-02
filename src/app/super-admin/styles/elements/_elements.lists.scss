@@ -1,0 +1,24 @@
+@import 'src/app/super-admin/styles/settings/_settings.layout';
+@import 'src/app/super-admin/styles/settings/_settings.containers';
+@import 'src/app/super-admin/styles/settings/_settings.colors';
+@mixin outerLayout{
+	display: $flex;
+    flex-direction: $flex-direction2;
+    width: $content-max-width;
+    height: $content-max-height;
+    
+}
+@mixin RightLayout{
+	width: 635px;
+        height: $content-max-height;
+        flex-shrink: 0;
+        background: #F4FAFF;
+    
+}
+@mixin leftLayout{
+	width: 805px;
+    height: $content-max-height;
+    flex-shrink: 0;
+    
+}
+

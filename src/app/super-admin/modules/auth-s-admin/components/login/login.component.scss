@@ -1,0 +1,179 @@
+
+@import 'src/app/super-admin/styles/settings/_settings.layout';
+@import 'src/app/super-admin/styles/settings/_settings.containers';
+@import 'src/app/super-admin/styles/settings/_settings.colors';
+@import 'src/app/super-admin/styles/elements/_elements.lists';
+@import '../../../../styles/tools/tools.mediaquery';
+
+
+
+.signin-container {
+   /*  display: $flex;
+    flex-direction: $flex-direction2;
+    width: $content-max-width;
+    height: $content-max-height;
+    background: #F4FAFF; */
+    @include outerLayout;
+    
+    .impPart
+    {
+        display: $flex;
+        flex-direction: $flex-direction1;
+        width: 805px;
+        height: $content-max-height;
+        flex-shrink: 0;
+        .picture1
+        {
+            width: 805px;
+            height: 431px;
+            flex-shrink: 0;
+            background-image: url('/assets/img2.jpg');
+            //background-color: green;
+            background-size: contain;
+            background-repeat: no-repeat;
+           
+
+            
+        }
+        .picture2
+        {
+            width: 805px;
+            height: 431px;
+            flex-shrink: 0;
+            //background-color: #45a049 ;
+            background-image: url('/assets/img1.png');
+            background-size: contain; 
+            background-repeat: no-repeat;
+        }
+    }
+
+    .formPart {
+        /* width: 635px;
+        height: $content-max-height;
+        flex-shrink: 0;
+        background: #F4FAFF; */
+        @include RightLayout;
+
+    .logo-container 
+    {
+        // text-align: center;
+        display: $flex;
+        flex-direction: $flex-direction2;
+        width: 259px;
+        height: 56.791px;
+        flex-shrink: 0;
+        margin-top: 157px; 
+        margin-left: 101px;
+        
+        img 
+        {
+            width: 75.41px;
+            height: 56.791px;
+            flex-shrink: 0;
+        }
+        p 
+        {
+            color: $color-black;
+            font-feature-settings: 'clig' off, 'liga' off;
+            font-family: Poppins;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: bold;
+            line-height: 20px; 
+        }
+  
+    }
+    h2 
+    {
+        color: $color-black;
+        font-family: Poppins;
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: -0.165px;
+        margin-left: 101px;
+    }
+        .details1
+        {
+            display: $flex;
+            flex-direction: $flex-direction1;
+            margin-left: 105px;
+            width: 336px;
+            height: 89px;
+            flex-shrink: 0;
+        
+        label 
+        {
+            color: var(--gray-600, #5B6D8E);
+            font-family: Poppins;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-bottom: 10px;
+        }
+        
+        input 
+        {
+            width: 423px;
+            height: 53px;
+            flex-shrink: 0;
+            border-radius: 10px;
+            border: 1px solid #CBC9C9;
+            background: #FFF;
+            margin-bottom: 10px;
+        }
+    } 
+    .forgot-remember 
+    {
+    display: $flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    //align-items: center;
+    label
+    {
+        width: 98px;
+        color: $color-black;
+        font-feature-settings: 'clig' off, 'liga' off;
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: left;
+        margin-left: 103px;
+    }
+    a 
+    {
+        width: 50%;
+        color: #58A0FF;
+        font-family: Poppins;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-decoration-line: underline;
+        text-align: left;
+    }
+    }
+      
+    button 
+    {
+        display: $flex;
+        width: 425px;
+        height: 54px;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        border-radius: 10px;
+        background: $color-blue-button;
+        box-shadow:$button-box-shadow;
+        margin-left: 105px;
+        
+    }
+  }
+} 
+  

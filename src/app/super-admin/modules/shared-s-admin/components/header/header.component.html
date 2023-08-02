@@ -1,0 +1,19 @@
+
+<header class="header">
+    <div class="logo">
+        <img src="/assets/logo.jpg" alt="Chatbotlogo">
+      <p>Chatbot <br>management system</p><br>
+    </div>
+    <div class="profile">
+        <div>
+            <button mat-button [matMenuTriggerFor]="admin"><img src="/assets/Vector (3).jpg" alt="profile"></button>
+                    <mat-menu #admin="matMenu">
+                    <button mat-menu-item routerLink="/myProfile/page2">my profile </button>
+                    <button mat-menu-item routerLink="shared">log out</button>
+                    </mat-menu>      
+        </div> 
+        <div>
+            <h3>Deepak <br>admin</h3><br>  
+        </div>                
+    </div>
+  </header>
