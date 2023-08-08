@@ -7,7 +7,8 @@ import { AuthSAdminModule } from './super-admin/modules/auth-s-admin/auth-s-admi
 import { SharedSAdminModule } from './super-admin/modules/shared-s-admin/shared-s-admin.module';
 import { MyProfileModule } from './super-admin/modules/my-profile/my-profile.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
- import { DepartmentListModule } from './super-admin/modules/department-list/department-list.module';
+import { DepartmentListModule } from './super-admin/modules/department-list/department-list.module';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MyProfileModule,
     DepartmentListModule,
     BrowserAnimationsModule,
+    HttpClientModule
   
   ],
   providers: [],

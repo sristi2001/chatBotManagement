@@ -1,34 +1,35 @@
 
 .container
 {
-    width: 98vw;
-    height: 98vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    background-color: rgb(240, 248, 248);
     .top
     {
-        width: 98vw;
-        height: 18vh;
+        width: 100%;
+        height: 11%;
     }
     .bottom 
     {
-        width: 98vw;
-        height: 79vh;
-        background-color: rgb(240, 248, 248);
+        width: 100%;
+        height: 89%;
+        // background-color: aquamarine;
         display: flex;
         flex-direction: row;
         .menu-bar
         {
-            width: 19%;
+            width: 18%;
             height: 100%;
         }
         .form
         {
-            width: 80%;
-            height: 98%;
-            margin: 0.5rem;
-            justify-content: left;
-             background-color: rgb(240, 63, 63);
+            width: 78%;
+            height: 100%;
+             margin-left: 1rem;
+            // justify-content: left;
+            //  background-color: rgb(240, 63, 63);
         }
 
     }

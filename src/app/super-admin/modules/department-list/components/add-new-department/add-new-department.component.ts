@@ -1,6 +1,6 @@
-import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UsersDataService } from 'src/app/services/users-data.service';
 
 @Component({
   selector: 'app-add-new-department',
@@ -9,13 +9,13 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 })
 export class AddNewDepartmentComponent implements OnInit {
   public registrationForm!: FormGroup;
-  // public submited:
-email: any;
+  public submitted:boolean = false;
+  // email: any;
 
-  constructor(private formBuilder: FormBuilder,
-    public dialogRef: MatDialogRef<AddNewDepartmentComponent>,
+  constructor(private formBuilder: FormBuilder , private UsersDataService: UsersDataService)
+    /* public dialogRef: MatDialogRef<AddNewDepartmentComponent>,
     @Inject(MAT_DIALOG_DATA) public data:any
-    ) { console.log(data);
+    ) */ { 
     }
 
   ngOnInit(): void {
@@ -30,27 +30,50 @@ email: any;
       postelCode: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      address: this.formBuilder.group({
-        street: ['', Validators.required],
-        zipCode: ['', Validators.required],
-        // You can add more address fields as needed (e.g., country, etc.)
-      }),
+      address: ['', Validators.required],
     });
+  }
+  get f(): {[key: string]:AbstractControl}
+  {
+    return this.registrationForm.controls
   }
 
   // This method is called when the form is submitted
-  onSubmit(): void {
-    if (this.registrationForm.valid) {
+  public onSubmit()  {
+    this.submitted=true;
+    console.log(this.registrationForm);
+    /* if (this.registrationForm.valid) {
       // Handle the form submission logic here (e.g., send data to the server)
       console.log(this.registrationForm.value);
     } else {
       // Mark form fields as touched to display validation messages
       this.markFormGroupTouched(this.registrationForm);
-    }
-  }
+    } */
 
-  // Utility function to mark all form fields as touched
-  markFormGroupTouched(formGroup: FormGroup) {
+    if (this.registrationForm.valid) {
+      const departmentData = this.registrationForm.value;
+      this.UsersDataService.addDepartment(departmentData).subscribe(
+        () => {
+          console.log('Department added successfully');
+          // Optional: Fetch updated department list after adding
+          this.UsersDataService.getDepartments().subscribe(
+            (departments) => {
+              // Update your dpList or perform any necessary actions
+            },
+            (error) => {
+              console.error('Error fetching department list', error);
+            });
+        },
+        (error: any) => {
+          console.error('Error adding department', error);
+        });
+    }
+  
+
+  }
+}
+// Utility function to mark all form fields as touched
+  /* markFormGroupTouched(formGroup: FormGroup) {
     Object.values(formGroup.controls).forEach(control => {
       if (control instanceof FormGroup) {
         this.markFormGroupTouched(control);
@@ -58,6 +81,4 @@ email: any;
         control.markAsTouched();
       }
     });
-  } 
-
-}
+  }  */

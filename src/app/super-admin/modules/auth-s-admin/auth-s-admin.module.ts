@@ -25,9 +25,9 @@ import { RegisterComponent } from './components/register/register.component';
     SharedSAdminModule
 
   ],
-  exports:[
+  /* exports:[
     LoginComponent
-  ]
+  ] */
 })
 export class AuthSAdminModule { 
  

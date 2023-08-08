@@ -8,106 +8,90 @@
         <div class="form-field">
           <label for="departmentName">Department Name:</label>
           <input type="text" id="departmentName" formControlName="departmentName" />
-          <div *ngIf="registrationForm.get('departmentName')?.invalid && registrationForm.get('departmentName')?.touched">
-            Department name is required.
-          </div>
+          <span *ngIf="submitted && f['departmentName'].errors && f['departmentName'].errors['required']">
+            department Name Name is required
+          </span>
         </div>
 
          <div class="address">
             <div class="form-field">
             <label for="state">State:</label>
-            <input type="text" id="sredtate" formControlName="state" />
-            <div *ngIf="registrationForm.get('state')?.invalid && registrationForm.get('state')?.touched">
+            <input type="text" id="state" formControlName="state" />
+            <!-- <div *ngIf="registrationForm.get('state')?.invalid && registrationForm.get('state')?.touched">
                 State is required.
-            </div>
+            </div> -->
+            <span *ngIf="submitted && f['state'].errors && f['state'].errors['required']">
+              state is required
+            </span>
             </div>
         
             <div class="form-field">
             <label for="city">City:</label>
             <input type="text" id="city" formControlName="city" />
-            <div *ngIf="registrationForm.get('city')?.invalid && registrationForm.get('city')?.touched">
+            <!-- <div *ngIf="registrationForm.get('city')?.invalid && registrationForm.get('city')?.touched">
                 City is required.
+            </div> -->
+            <span *ngIf="submitted && f['city'].errors && f['city'].errors['required']">
+              city is required
+            </span>
             </div>
-            </div>
+
             <div class="form-field">
                 <label for="state">postel code:</label>
                 <input type="text" id="postelCode" formControlName="postelCode" />
-                <div *ngIf="registrationForm.get('postelCode')?.invalid && registrationForm.get('postelCode')?.touched">
-                    postel code is required.
-                </div>
+                <span *ngIf="submitted && f['postelCode'].errors && f['postelCode'].errors['required']">
+                  postel Code is required
+                </span>
             </div>
         </div>
-        
-
-         <!-- <div class="address"> -->
-           <!--  <table class="address" >
-              <tr>
-                <td> 
-                
-                <mat-form-field class="state"> 
-                  <mat-label>State:</mat-label>           
-                <input type="text" id="state" formControlName="state" matInput placeholder="Ex. chhatisgarh">
-                </mat-form-field>
-                <div *ngIf="registrationForm.get('state')?.invalid && registrationForm.get('state')?.touched">
-                  State is required.
-              </div>
-              </td>
-                <td>
-                  
-                  <mat-form-field class="city"><mat-label>City</mat-label>
-                  <input type="text" id="city" formControlName="city" matInput placeholder="Ex. korba"> 
-                </mat-form-field>
-                <div *ngIf="registrationForm.get('city')?.invalid && registrationForm.get('city')?.touched">
-                    City is required.
-                </div>
-              </td>
-              
-              <td>
-                
-                <mat-form-field class="code">
-                  <mat-label>Postal Code</mat-label>
-                <input  type="text" id="postelCode" formControlName="postelCode" matInput #postalCode maxlength="5" placeholder="Ex. 94105" >
-                
-                </mat-form-field> 
-                <div *ngIf="registrationForm.get('postelCode')?.invalid && registrationForm.get('postelCode')?.touched">
-                  postel code is required.
-              </div>
-              </td>
-             </tr>
-            </table> -->
-         <!-- </div> -->
-         
 
 
        <div class="email-password">
           <div class="form-field">
           <label for="email">Email:</label>
           <input type="email" id="email" formControlName="email" />
-          <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
+          <!-- <div *ngIf="registrationForm.get('email')?.invalid && registrationForm.get('email')?.touched">
             <div *ngIf="registrationForm.get('email')?.errors?.['required']">Email is required.</div>
             <div *ngIf="registrationForm.get('email')?.errors?.['email']">Invalid email format.</div>
-          </div>
+          </div> -->
+          <span *ngIf="f['email'].invalid && f['email'].touched">
+            <span>
+              <span *ngIf=" f['email'].errors && f['email'].errors['required']">
+                email is required
+              </span>
+              <span *ngIf="f['email'].errors&& f['email']">
+                Invalid email format.
+              </span>
+            </span>
+          </span>
         </div>
       
         <div class="form-field">
           <label for="password">Password:</label>
           <input type="password" id="password" formControlName="password" />
-          <div *ngIf="registrationForm.get('password')?.invalid && registrationForm.get('password')?.touched">
-            <div *ngIf="registrationForm.get('password')?.errors?.['required']">Password is required.</div>
-            <div *ngIf="registrationForm.get('password')?.errors?.['minlength']">
-              Password must be at least 6 characters long.
-            </div>
-          </div>
+          <span *ngIf="f['password'].invalid && f['password'].touched">
+            <span>
+              <span *ngIf=" f['password'].errors && f['password'].errors['required']">
+                password is required
+              </span>
+              <span *ngIf="f['password'].errors&& f['password'].errors['minlength']">
+                Password must be at least 6 characters long.
+              </span>
+            </span>
+          </span>
         </div>
     
        </div>
         
           <div class="form-field">
             <label for="address">complete Address:</label>
-            <textarea rows="4" cols="1" id="street" formControlName="street"></textarea>
-            <div *ngIf="registrationForm.get('address.street')?.invalid && registrationForm.get('address.street')?.touched">
+            <textarea rows="4" cols="1" id="address" formControlName="address"></textarea>
+            <!-- <div *ngIf="registrationForm.get('address.street')?.invalid && registrationForm.get('address.street')?.touched">
               address is required.
-            </div>
+            </div> -->
+            <span *ngIf="submitted && f['address'].errors && f['address'].errors['required']">
+              address is required
+            </span>
           </div>
       
         <div class="button">
